@@ -3,9 +3,13 @@
     display: flex;
     flex-direction: column;
 }
+.slider {
+    background-color: #04242D;
+}
 
 .main {
     flex: 1;
+    background-color:#F1F2ED;
 }
 
 .sidebar {
@@ -31,6 +35,8 @@
         overflow: hidden;
         text-overflow: ellipsis;
     }
+
+
 
 @media (max-width: 767.98px) {
     .top-row:not(.auth) {
@@ -68,4 +74,5 @@
         padding-left: 2rem !important;
         padding-right: 1.5rem !important;
     }
+
 }

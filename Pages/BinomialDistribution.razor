@@ -1,41 +1,88 @@
 ﻿@page "/BinomialDistribution"
 
 @inject IJSRuntime JSRuntime
+<style>
+    input[type="range"] {
+        -webkit-appearance: none;
+        margin-right: 15px;
+        width: 200px;
+        height: 7px;
+        background: rgba(255, 255, 255, 0.6);
+        border-radius: 5px;
+        background-image: linear-gradient(#FF6A4C, #FF6A4C);
+        background-size: 70% 100%;
+        background-repeat: no-repeat;
+    }
 
-<div style="float: left;">
-    <dl>
-        <dt>Distribution Mean:</dt>
-        <dd>@this.Mean</dd>
-        <dt>Distribution Variance:</dt>
-        <dd>@variance</dd>
-        <dt>Time to generate data (ms):</dt>
-        <dd>@TimeToGenerateData</dd>
-        <dt>Probability:</dt>
-        <dd>
-            <input id="probabilityInput" type="range" min="0" max="100" step="5"
-                   value="@this.Probability" @onchange="@OnProbabilityUpdated" oninput="probabilityOutput.value=probabilityInput.value/100" />
-            <output name="probabilityOutput" id="probabilityOutput" for="probabilityInput">@(this.Probability/100)</output>
-        </dd>
-        <dt>Samples Size:</dt>
-        <dd>
-            <input id="samplesSizeInput" type="range" class="" min="250" max="20000" step="250"
-                   value="@this.SamplesSize" @onchange="@OnSamplesSizeUpdated" oninput="samplesSizeOutput.value=samplesSizeInput.value" />
-            <output name="samplesSizeOutput" id="samplesSizeOutput" for="samplesSizeInput">@this.SamplesSize</output>
-        </dd>
-        <dt>Trials:</dt>
-        <dd>
-            <input id="trialsInput" type="range" class="" min="0" max="500" step="10"
-                   value="@this.Trials" @onchange="@OnTrialsUpdated" oninput="trialsOutput.value=trialsInput.value" />
-            <output name="trialsOutput" id="trialsOutput" for="probabilityInput">@this.Trials</output>
-        </dd>
-    </dl>
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: #FF6A4C;
+            cursor: ew-resize;
+            box-shadow: 0 0 2px 0 #555;
+            transition: background .3s ease-in-out;
+        }
+
+    input[type=range]::-webkit-slider-runnable-track {
+        -webkit-appearance: none;
+        box-shadow: none;
+        border: none;
+        background: transparent;
+    }
+    .base {
+        color: #094E5D;
+        font-size: 18px;
+    }
+    
+</style>
+<div  style="padding-top:75px; padding-left:50px;">
+    <table>
+        <tr>
+            <td style="background-color:#E6E4D9;padding:10px; ">
+                <div style="float: left;">
+                    <dl>
+                        <dt class="base">Distribution Mean:</dt>
+                        <dd class="base">@this.Mean</dd>
+                        <dt class="base">Distribution Variance:</dt>
+                        <dd class="base">@variance</dd>
+                        <dt class="base">Time to generate data (ms):</dt>
+                        <dd class="base">@TimeToGenerateData</dd>
+                        <dt class="base">Probability:</dt>
+                        <dd>
+                            <input id="probabilityInput" type="range" min="0" max="100" step="5" style="font-size:18px; outline-width:thick;"
+                                   value="@this.Probability" @onchange="@OnProbabilityUpdated" oninput="probabilityOutput.value=probabilityInput.value/100" />
+                            <output name="probabilityOutput" style="color:#094E5D;  font-size:18px;"  id="probabilityOutput" for="probabilityInput">@(this.Probability / 100)</output>
+                        </dd>
+                        <dt class="base">Samples Size:</dt>
+                        <dd>
+                            <input id="samplesSizeInput" type="range" class="" min="250" max="20000" step="250" style="font-size:18px; "
+                                   value="@this.SamplesSize" @onchange="@OnSamplesSizeUpdated" oninput="samplesSizeOutput.value=samplesSizeInput.value" />
+                            <output name="samplesSizeOutput" class="base" id="samplesSizeOutput" for="samplesSizeInput">@this.SamplesSize</output>
+                        </dd>
+                        <dt class="base">Trials:</dt>
+                        <dd>
+                            <input id="trialsInput" type="range" class="base" min="0" max="500" step="10" 
+                                   value="@this.Trials" @onchange="@OnTrialsUpdated" oninput="trialsOutput.value=trialsInput.value" />
+                            <output name="trialsOutput" class="base" id="trialsOutput" for="probabilityInput">@this.Trials</output>
+                        </dd>
+                    </dl>
+                </div>
+            </td>
+            <td><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></td>
+            <td style="background-color:#E6E4D9;padding:10px; ">
+                <!-- Create a div where the graph will take place -->
+                <div id="my_dataviz" style="clear: both;">
+                </div>
+            </td>
+        </tr>
+    </table>
 </div>
+
 
 <p />
-<!-- Create a div where the graph will take place -->
-<div id="my_dataviz" style="clear: both;">
 
-</div>
 
 
 @code {
