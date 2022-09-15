@@ -46,7 +46,7 @@ function createD3SvgObject(data, mean, title) {
     // And apply this function to data to get the bins
     var bins = histogram(data);
 
-    var color = "steelblue";
+    var color = '#FF6A4C';// "steelblue";
     var yBinMin = d3.min(bins, function (d) { return d.length });
     var yBinMax = d3.max(bins, function (d) { return d.length });
     var colorScale = d3.scaleLinear()
@@ -59,7 +59,7 @@ function createD3SvgObject(data, mean, title) {
         .append("svg")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
-            .style('background-color', 'WhiteSmoke')
+        .style('background-color', '#E6E4D9')
         .append("g")
             .attr('class', 'bars')
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
