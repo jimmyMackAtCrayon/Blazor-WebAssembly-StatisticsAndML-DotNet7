@@ -60,6 +60,7 @@ function createD3SvgObject(data, mean, title) {
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
         .style('background-color', '#E6E4D9')
+      /*  .style('width', '500px')*/
         .append("g")
             .attr('class', 'bars')
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
