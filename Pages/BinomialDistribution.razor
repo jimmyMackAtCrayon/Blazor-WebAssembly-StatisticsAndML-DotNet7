@@ -58,7 +58,7 @@
                            <dd>
                             <input id="samplesSizeInput" type="range" class="" min="250" max="20000" step="250" style="font-size:18px; "
                                    value="@this.SamplesSize" @onchange="@OnSamplesSizeUpdated" oninput="samplesSizeOutput.value=samplesSizeInput.value" />
-                            <output name="samplesSizeOutput" class="base" id="samplesSizeOutput" for="samplesSizeInput">@this.SamplesSize</output>
+                            <output name="samplesSizeOutput" class="base" style="width:55px;" id="samplesSizeOutput" for="samplesSizeInput">@this.SamplesSize</output>
                             </dd>
                         </div>
                         <div><dt class="base">Trials:</dt>
@@ -74,7 +74,7 @@
             <td style="width: 5%; "><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></td>
             <td style="background-color:#E6E4D9;padding:10px; width: 100%; ">
                 <!-- Create a div where the graph will take place -->
-                <div id="my_dataviz" style="clear: both;">
+                <div id="my_dataviz" style="clear: both; text-align:center;">
                 </div>
             </td>
         </tr>
