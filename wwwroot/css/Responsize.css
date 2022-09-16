@@ -1,0 +1,16 @@
+﻿.titan {
+    padding-top: 70px;
+    padding-left: 50px;
+}
+
+
+@media (max-width: 1276px) {
+    /*Less than 768px*/
+   
+    
+}
+
+@media (min-width: 1277px) {
+   /*Greater than 768px*/
+}
+

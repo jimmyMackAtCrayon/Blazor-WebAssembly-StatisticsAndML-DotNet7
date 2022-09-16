@@ -36,12 +36,17 @@
     .base {
         color: #094E5D;
         font-size: 18px;
+        padding-left: 5px;
+        padding-right: 5px;
     }
+  
+    
 </style>
 
-<div style="padding-top:70px; padding-left:50px;" >
 
-    <span style="float: left; padding-top:100px;background-color: #E6E4D9;height:460px;  ">
+<div  class="titan" >
+
+    <span style="float: left;padding-top:100px; background-color: #E6E4D9;height:460px; display:block;  ">
         <dl>
             <div><dt class="base">Distribution Mean:</dt><dd class="base">@this.Mean</dd></div>
             <div><dt class="base">Distribution Variance:</dt><dd class="base">@variance</dd></div>
@@ -70,19 +75,23 @@
                     <output name="trialsOutput" class="base" id="trialsOutput" for="probabilityInput">@this.Trials</output>
                 </dd>
             </div>
-        </dl>
+        </dl>        
     </span>    
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+   
+   
     <!-- Create a div where the graph will take place -->
-    <span id="my_dataviz" style=" float: inherit;background-color: #E6E4D9;">
-    </span>
+
+    <span id="my_dataviz" style=" float: inherit;background-color: #E6E4D9;" ></span>
+   
 </div>
 
 
 
 
 @code {
-
+   
     public double Mean { get; set; }
 
     public double Probability { get; set; }
