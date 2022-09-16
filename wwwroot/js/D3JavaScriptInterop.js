@@ -194,6 +194,7 @@ function createD3SvgObject(data, mean, title) {
         .style("font-size", "12px")
         .style("font-weight", "bold");
 
+
     svg
         .append("text")
         .attr("class", "title")
