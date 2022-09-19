@@ -7,7 +7,7 @@
 @media (max-width: 878px) {
     /*Phone*/
     /* Content */
-    .column-6 {
+    .column-4 {
         padding: 0.5em 2%;
     }
 
@@ -24,8 +24,8 @@
 @media (min-width: 879px) {
    /*Tablet or Desktop*/
     /* Content */
-    .column-6 {
-        width: 50%;
+    .column-4 {
+        width: 37%;
         float: left;
     }
 }
