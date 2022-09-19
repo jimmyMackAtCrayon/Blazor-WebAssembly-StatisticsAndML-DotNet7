@@ -6,13 +6,18 @@
     input[type="range"] {
         -webkit-appearance: none;
         margin-right: 15px;
-        width: 200px;
-        height: 7px;
+        width: 100px;
+        height: 12px;
         background: rgba(255, 255, 255, 0.6);
         border-radius: 5px;
-        background-image: linear-gradient(#FF6A4C, #FF6A4C);
-        background-size: 70% 100%;
-        background-repeat: no-repeat;
+       /* background-image: linear-gradient(#FF6A4C, #FF6A4C);*/
+        background-color: #F1F2ED;
+       /* border-style: solid;
+        border-color: red;*/
+        border-width: thin;
+        border-style:solid;
+        border-color: #FF6A4C;
+        
     }
 
         input[type="range"]::-webkit-slider-thumb {
@@ -20,7 +25,7 @@
             height: 20px;
             width: 20px;
             border-radius: 50%;
-            background: #FF6A4C;
+            background: #094E5D;
             cursor: ew-resize;
             box-shadow: 0 0 2px 0 #555;
             transition: background .3s ease-in-out;
@@ -39,54 +44,56 @@
         padding-left: 5px;
         padding-right: 5px;
     }
-  
-    
 </style>
-<div id="contentWrapper">   
+<div id="contentWrapper">
 
     <div class="row">
-        <div class="column-4" >
+        <div class="column-4">
             <p style="float: left;padding-top:100px; background-color: #E6E4D9;height:476px; display:block;  border-radius: 2em; ">
                 <dl>
-                    <dt class="base">Distribution Mean:</dt><dd class="base">@this.Mean</dd>
-                    <dt class="base">Distribution Variance:</dt><dd class="base">@variance</dd>
-                    <dt class="base">Time to generate data (ms):</dt><dd class="base">@TimeToGenerateData</dd>
+                    <dt class="base">Distribution Mean:</dt>
+                    <dd class="base">@this.Mean</dd>
+                    <dt class="base">Distribution Variance:</dt>
+                    <dd class="base">@variance</dd>
+                    <dt class="base">Time to generate data (ms):</dt>
+                    <dd class="base">@TimeToGenerateData</dd>
+
+                    <dt class="base">Probability:</dt>
+                    <dd>
+                        <input id="probabilityInput" type="range" class="base" min="0" max="100" step="5" style="font-size:18px;"
+                               value="@this.Probability" @onchange="@OnProbabilityUpdated" oninput="probabilityOutput.value=probabilityInput.value/100" />
+                        <output name="probabilityOutput" style="color:#094E5D;  font-size:18px;" id="probabilityOutput" for="probabilityInput">@(this.Probability / 100)</output>
+                    </dd>
+
+
+                    <dt class="base">Samples Size:</dt>
+                    <dd>
+                        <input id="samplesSizeInput" type="range" class="base" min="250" max="20000" step="250" style="font-size:18px; "
+                               value="@this.SamplesSize" @onchange="@OnSamplesSizeUpdated" oninput="samplesSizeOutput.value=samplesSizeInput.value" />
+                        <output name="samplesSizeOutput" class="base" style="width:55px;" id="samplesSizeOutput" for="samplesSizeInput">@this.SamplesSize</output>
+                    </dd>
+
                     
-                        <dt class="base">Probability:</dt>
-                        <dd>
-                            <input id="probabilityInput" type="range" min="0" max="100" step="5" style="font-size:18px;"
-                                   value="@this.Probability" @onchange="@OnProbabilityUpdated" oninput="probabilityOutput.value=probabilityInput.value/100" />
-                            <output name="probabilityOutput" style="color:#094E5D;  font-size:18px;" id="probabilityOutput" for="probabilityInput">@(this.Probability / 100)</output>
-                        </dd>
-                    
-                    
-                        <dt class="base">Samples Size:</dt>
-                        <dd>
-                            <input id="samplesSizeInput" type="range" class="" min="250" max="20000" step="250" style="font-size:18px; "
-                                   value="@this.SamplesSize" @onchange="@OnSamplesSizeUpdated" oninput="samplesSizeOutput.value=samplesSizeInput.value" />
-                            <output name="samplesSizeOutput" class="base" style="width:55px;" id="samplesSizeOutput" for="samplesSizeInput">@this.SamplesSize</output>
-                        </dd>
-                    
-                    
-                        <dt class="base">Trials:</dt>
-                        <dd>
-                            <input id="trialsInput" type="range" class="base" min="0" max="500" step="10" style="font-size:18px; "
-                                   value="@this.Trials" @onchange="@OnTrialsUpdated" oninput="trialsOutput.value=trialsInput.value" />
-                            <output name="trialsOutput" class="base" id="trialsOutput" for="probabilityInput">@this.Trials</output>
-                        </dd>
-                    
+                    <dt class="base">Trials:</dt>
+                    <dd>
+                    <input id="trialsInput" type="range" class="base" min="0" max="500" step="10" style="font-size:18px; "
+                    value="@this.Trials" @onchange="@OnTrialsUpdated" oninput="trialsOutput.value=trialsInput.value" />
+                    <output name="trialsOutput" class="base" id="trialsOutput" for="probabilityInput">@this.Trials</output>
+                    </dd>
+
+
                 </dl>
             </p>
         </div>
         <!--end of column -->
-        <div class="column-4"  >
+        <div class="column-4">
             <div style=" float: inherit;background-color: #E6E4D9; display:block;  border-radius: 2em;">
-            <p id="my_dataviz" >
-              
-            </p>
+                <p id="my_dataviz">
+
+                </p>
             </div>
         </div>
-        
+
         <!--end of column -->
     </div>
     <!-- End of Row -->
@@ -94,7 +101,7 @@
 
 
 @code {
-   
+
     public double Mean { get; set; }
 
     public double Probability { get; set; }
