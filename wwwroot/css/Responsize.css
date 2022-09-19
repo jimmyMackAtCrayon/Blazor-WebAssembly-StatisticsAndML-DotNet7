@@ -1,16 +1,28 @@
-﻿.titan {
-    padding-top: 70px;
-    padding-left: 50px;
+﻿#contentWrapper {
+    background-color: #F1F2ED;
 }
 
 
-@media (max-width: 1276px) {
-    /*Less than 768px*/
+@media (max-width: 878px) {
+    /*Phone*/
+    /* Content */
+    .column-6 {
+        padding: 0.5em 2%;
+    }
+
+    .column-12 {
+        padding: 0.5em 2%;
+    }
    
     
 }
 
-@media (min-width: 1277px) {
-   /*Greater than 768px*/
+@media (min-width: 879px) {
+   /*Tablet or Desktop*/
+    /* Content */
+    .column-6 {
+        width: 50%;
+        float: left;
+    }
 }
 
