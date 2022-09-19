@@ -16,11 +16,13 @@
                     <dd class="base">@TimeToGenerateData</dd>
 
                     <dt class="base">Probability:</dt>
+                    
                     <dd>
-                        <input id="probabilityInput" type="range"  min="1" max="100" step="5" style="font-size:18px;"
+                        <input id="probabilityInput" type="range" min="5" max="100" step="5" style="font-size:18px;"
                                value="@this.Probability" @onchange="@OnProbabilityUpdated" oninput="probabilityOutput.value=probabilityInput.value/100" />
                         <output name="probabilityOutput" style="color:#094E5D;  font-size:18px;" id="probabilityOutput" for="probabilityInput">@(this.Probability / 100)</output>
                     </dd>
+                    
 
 
                     <dt class="base">Samples Size:</dt>
