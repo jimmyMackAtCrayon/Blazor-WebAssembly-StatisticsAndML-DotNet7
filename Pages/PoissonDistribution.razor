@@ -1,22 +1,105 @@
 ﻿@page "/PoissonDistribution"
 
 @inject IJSRuntime JSRuntime
+<style>
 
-<div style="float: left;">
+    input[type="range"] {
+        -webkit-appearance: none;
+        margin-right: 15px;
+        width: 200px;
+        height: 7px;
+        background: rgba(255, 255, 255, 0.6);
+        border-radius: 5px;
+        background-image: linear-gradient(#FF6A4C, #FF6A4C);
+        background-size: 70% 100%;
+        background-repeat: no-repeat;
+    }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: #FF6A4C;
+            cursor: ew-resize;
+            box-shadow: 0 0 2px 0 #555;
+            transition: background .3s ease-in-out;
+        }
+
+    input[type=range]::-webkit-slider-runnable-track {
+        -webkit-appearance: none;
+        box-shadow: none;
+        border: none;
+        background: transparent;
+    }
+
+    .base {
+        color: #094E5D;
+        font-size: 18px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+   
+</style>
+
+<div id="contentWrapper">
+
+    <div class="row">
+        <div class="column-4">
+            <p style="float: left;padding-top:100px; background-color: #E6E4D9;height:476px; width:92%; display:block;  border-radius: 2em;  ">
+                <dl>
+                    <dt class="base">Distribution Mean:</dt>
+                    <dd class="base">@mean</dd>
+                    <dt class="base">Distribution Variance:</dt>
+                    <dd class="base">@variance</dd>
+                    <dt class="base">Time to generate data (ms):</dt>
+                    <dd class="base">@TimeToGenerateData</dd>
+                    <dt class="base">Lambda:</dt>
+                    <dd>
+                        <input id="lambdaInput" class="base" type="range" min="1" max="10" step="1"
+                               value="@this.Lambda" @onchange="@OnLambdaUpdated" oninput="lambdaOutput.value=lambdaInput.value" />
+                        <output name="lambdaOutput" class="base" style="text-align:left;" id="lambdaOutput" for="lambdaInput">@this.Lambda</output>
+                    </dd>
+                    <dt class="base">Samples Size:</dt>
+                    <dd>
+                        <input id="samplesSizeInput" class="base" type="range"  min="250" max="20000" step="250"
+                               value="@this.SamplesSize" @onchange="@OnSamplesSizeUpdated" oninput="samplesSizeOutput.value=samplesSizeInput.value" />
+                        <output name="samplesSizeOutput" class="base"  id="samplesSizeOutput" for="samplesSizeInput">@this.SamplesSize</output>
+                    </dd>
+                   
+                </dl>
+            </p>
+        </div>
+        <!--end of column -->
+        <div class="column-4">
+            <div style=" float: inherit;background-color: #E6E4D9; display:block;  border-radius: 2em;">
+                <p id="my_dataviz">
+
+                </p>
+            </div>
+        </div>
+
+        <!--end of column -->
+    </div>
+    <!-- End of Row -->
+</div>
+
+@*<div style="float: left;">
     <dl>
-        <dt>Distribution Mean:</dt>
+        <dt class="base">Distribution Mean:</dt>
         <dd>@mean</dd>
-        <dt>Distribution Variance:</dt>
+        <dt class="base">Distribution Variance:</dt>
         <dd>@variance</dd>
-        <dt>Time to generate data (ms):</dt>
+        <dt class="base">Time to generate data (ms):</dt>
         <dd>@TimeToGenerateData</dd>
-        <dt>Lambda:</dt>
+        <dt class="base">Lambda:</dt>
         <dd>
             <input id="lambdaInput" type="range" min="1" max="10" step="1"
                    value="@this.Lambda" @onchange="@OnLambdaUpdated" oninput="lambdaOutput.value=lambdaInput.value" />
             <output name="lambdaOutput" id="lambdaOutput" for="lambdaInput">@this.Lambda</output>
         </dd>
-        <dt>Samples Size:</dt>
+        <dt class="base">Samples Size:</dt>
         <dd>
             <input id="samplesSizeInput" type="range" class="" min="250" max="20000" step="250"
                    value="@this.SamplesSize" @onchange="@OnSamplesSizeUpdated" oninput="samplesSizeOutput.value=samplesSizeInput.value" />
@@ -29,7 +112,7 @@
 <!-- Create a div where the graph will take place -->
 <div id="my_dataviz" style="clear: both;">
 
-</div>
+</div>*@
 
 
 @code {
