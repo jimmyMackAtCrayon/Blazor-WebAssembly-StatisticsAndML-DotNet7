@@ -1,50 +1,7 @@
 ﻿@page "/BinomialDistribution"
 
 @inject IJSRuntime JSRuntime
-<style>
 
-    input[type="range"] {
-        -webkit-appearance: none;
-        margin-right: 15px;
-        width: 100px;
-        height: 12px;
-        background: rgba(255, 255, 255, 0.6);
-        border-radius: 5px;
-       /* background-image: linear-gradient(#FF6A4C, #FF6A4C);*/
-        background-color: #F1F2ED;
-       /* border-style: solid;
-        border-color: red;*/
-        border-width: thin;
-        border-style:solid;
-        border-color: #FF6A4C;
-        
-    }
-
-        input[type="range"]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            height: 20px;
-            width: 20px;
-            border-radius: 50%;
-            background: #094E5D;
-            cursor: ew-resize;
-            box-shadow: 0 0 2px 0 #555;
-            transition: background .3s ease-in-out;
-        }
-
-    input[type=range]::-webkit-slider-runnable-track {
-        -webkit-appearance: none;
-        box-shadow: none;
-        border: none;
-        background: transparent;
-    }
-
-    .base {
-        color: #094E5D;
-        font-size: 18px;
-        padding-left: 5px;
-        padding-right: 5px;
-    }
-</style>
 <div id="contentWrapper">
 
     <div class="row">
@@ -60,7 +17,7 @@
 
                     <dt class="base">Probability:</dt>
                     <dd>
-                        <input id="probabilityInput" type="range" class="base" min="0" max="100" step="5" style="font-size:18px;"
+                        <input id="probabilityInput" type="range" class="base" min="1" max="100" step="5" style="font-size:18px;"
                                value="@this.Probability" @onchange="@OnProbabilityUpdated" oninput="probabilityOutput.value=probabilityInput.value/100" />
                         <output name="probabilityOutput" style="color:#094E5D;  font-size:18px;" id="probabilityOutput" for="probabilityInput">@(this.Probability / 100)</output>
                     </dd>
@@ -76,7 +33,7 @@
                     
                     <dt class="base">Trials:</dt>
                     <dd>
-                    <input id="trialsInput" type="range" class="base" min="0" max="500" step="10" style="font-size:18px; "
+                    <input id="trialsInput" type="range" class="base" min="10" max="500" step="10" style="font-size:18px; "
                     value="@this.Trials" @onchange="@OnTrialsUpdated" oninput="trialsOutput.value=trialsInput.value" />
                     <output name="trialsOutput" class="base" id="trialsOutput" for="probabilityInput">@this.Trials</output>
                     </dd>
