@@ -41,34 +41,47 @@
     }
 </style>
 
-<div style="padding-top:70px; padding-left:50px;">
-    <span style="float: left; padding-top:100px;background-color: #E6E4D9;height:460px;  ">
-        <dl>
-            <div><dt class="base">Distribution Mean:</dt><dd class="base">@mean</dd></div>
-            <div><dt class="base">Distribution Variance:</dt><dd class="base">@variance</dd></div>
-            <div><dt class="base">Time To generate data (ms):</dt><dd class="base">@TimeToGenerateData</dd></div>
-            <div>
-                <dt class="base">Probability:</dt>
-                <dd>
-                    <input id="probabilityInput" type="range" min="0" max="100" step="5" style="font-size:18px;"
-                           value="@this.Probability" @onchange="@OnProbabilityUpdated" oninput="probabilityOutput.value=probabilityInput.value/100" />
-                    <output name="probabilityOutput" style="color:#094E5D;  font-size:18px;" id="probabilityOutput" for="probabilityInput">@(this.Probability / 100)</output>
-                </dd>
-            </div>
-            <div>
-                <dt class="base">Samples Size:</dt>
-                <dd>
-                    <input id="samplesSizeInput" type="range" class="" min="250" max="20000" step="250" style="font-size:18px; "
-                           value="@this.SamplesSize" @onchange="@OnSamplesSizeUpdated" oninput="samplesSizeOutput.value=samplesSizeInput.value" />
-                    <output name="samplesSizeOutput" class="base" style="width:55px;" id="samplesSizeOutput" for="samplesSizeInput">@this.SamplesSize</output>
-                </dd>
-            </div>
-        </dl>
-    </span>
 
-    <span>&nbsp;&nbsp;&nbsp;&nbsp; </span>
-    <!-- Create a div where the graph will take place -->
-    <span id="my_dataviz" style="clear: both;"></span>
+<div id="contentWrapper">
+
+    <div class="row">
+        <div class="column-4">
+            <p style="float: left;padding-top:100px; background-color: #E6E4D9;height:476px; display:block;  border-radius: 2em; ">
+                <dl>
+                    <div><dt class="base">Distribution Mean:</dt><dd class="base">@mean</dd></div>
+                    <div><dt class="base">Distribution Variance:</dt><dd class="base">@variance</dd></div>
+                    <div><dt class="base">Time To generate data (ms):</dt><dd class="base">@TimeToGenerateData</dd></div>
+                    <div>
+                        <dt class="base">Probability:</dt>
+                        <dd>
+                            <input id="probabilityInput" type="range" min="0" max="100" step="5" style="font-size:18px;"
+                                   value="@this.Probability" @onchange="@OnProbabilityUpdated" oninput="probabilityOutput.value=probabilityInput.value/100" />
+                            <output name="probabilityOutput" style="color:#094E5D;  font-size:18px;" id="probabilityOutput" for="probabilityInput">@(this.Probability / 100)</output>
+                        </dd>
+                    </div>
+                    <div>
+                        <dt class="base">Samples Size:</dt>
+                        <dd>
+                            <input id="samplesSizeInput" type="range" class="" min="250" max="20000" step="250" style="font-size:18px; "
+                                   value="@this.SamplesSize" @onchange="@OnSamplesSizeUpdated" oninput="samplesSizeOutput.value=samplesSizeInput.value" />
+                            <output name="samplesSizeOutput" class="base" style="width:55px;" id="samplesSizeOutput" for="samplesSizeInput">@this.SamplesSize</output>
+                        </dd>
+                    </div>
+                </dl>
+            </p>
+        </div>
+        <!--end of column -->
+        <div class="column-4">
+            <div style=" float: inherit;background-color: #E6E4D9; display:block;  border-radius: 2em;">
+                <p id="my_dataviz">
+
+                </p>
+            </div>
+        </div>
+
+        <!--end of column -->
+    </div>
+    <!-- End of Row -->
 </div>
 
 
