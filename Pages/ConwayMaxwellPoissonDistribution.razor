@@ -24,7 +24,7 @@
                     </dd>
                    <dt class="base">Samples Size:</dt>
                    <dd class="base">
-                        <input id="samplesSizeInput" type="range" class="base" min="250" max="20000" step="250"
+                        <input id="samplesSizeInput" type="range"  min="250" max="20000" step="250"
                                value="@this.SamplesSize" @onchange="@OnSamplesSizeUpdated" oninput="samplesSizeOutput.value=samplesSizeInput.value" />
                         <output name="samplesSizeOutput" class="base" id="samplesSizeOutput" for="samplesSizeInput">@this.SamplesSize</output>
                     </dd>
