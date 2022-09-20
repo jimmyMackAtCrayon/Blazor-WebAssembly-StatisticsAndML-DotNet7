@@ -45,34 +45,6 @@
     <!-- End of Row -->
 </div>
 
-@*<div style="float: left;">
-    <dl>
-        <dt class="base">Distribution Mean:</dt>
-        <dd>@mean</dd>
-        <dt class="base">Distribution Variance:</dt>
-        <dd>@variance</dd>
-        <dt class="base">Time to generate data (ms):</dt>
-        <dd>@TimeToGenerateData</dd>
-        <dt class="base">Lambda:</dt>
-        <dd>
-            <input id="lambdaInput" type="range" min="1" max="10" step="1"
-                   value="@this.Lambda" @onchange="@OnLambdaUpdated" oninput="lambdaOutput.value=lambdaInput.value" />
-            <output name="lambdaOutput" id="lambdaOutput" for="lambdaInput">@this.Lambda</output>
-        </dd>
-        <dt class="base">Samples Size:</dt>
-        <dd>
-            <input id="samplesSizeInput" type="range" class="" min="250" max="20000" step="250"
-                   value="@this.SamplesSize" @onchange="@OnSamplesSizeUpdated" oninput="samplesSizeOutput.value=samplesSizeInput.value" />
-            <output name="samplesSizeOutput" id="samplesSizeOutput" for="samplesSizeInput">@this.SamplesSize</output>
-        </dd>
-    </dl>
-</div>
-
-<p />
-<!-- Create a div where the graph will take place -->
-<div id="my_dataviz" style="clear: both;">
-
-</div>*@
 
 
 @code {

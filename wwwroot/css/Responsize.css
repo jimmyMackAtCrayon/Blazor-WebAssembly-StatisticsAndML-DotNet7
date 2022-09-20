@@ -1,30 +1,43 @@
 ﻿#contentWrapper {
     background-color: #F1F2ED;
-    margin-top:3%;
+    margin-top: 3%;
 }
 
+.column-6 {
+    padding: 0.5em 2%;
+}
 
-@media (max-width: 878px) {
-    /*Phone*/
-    /* Content */
-    .column-4 {
-        padding: 0.5em 2%;
+.column-12 {
+    padding: 0.5em 2%;
+}
+
+@media only screen and (min-width: 1140px) {
+    /*Desktop*/
+    .row {
+        max-width: 1140px;
+        margin: 0 auto; /*centers everything on the page*/
     }
-
-    .column-12 {
-       /* padding: 0.5em 2%;*/
-        
-    }    
 }
 
-@media (min-width: 879px) {
-   /*Tablet or Desktop*/
+@media only screen and (min-width: 641px) {
+   
     /* Content */
-    .column-4 {
-        width: 37%;
+    .column-6 {
+        width: 50%;
         float: left;
     }
 }
+/*end of the media query */
+
+
+@media (max-width: 768.98px) {
+    /*Phone*/
+    .column-6 {
+        padding: 0.5em 2%;
+    }
+
+}
+
 
 
 input[type="range"] {
@@ -35,8 +48,7 @@ input[type="range"] {
     /* background: rgba(255, 255, 255, 0.6);*/
     border-radius: 5px;
     border: 3px solid #FF6A4C;
-    border-width:thin;
-    
+    border-width: thin;
     /*background-image: linear-gradient(#FF6A4C, #FF6A4C);*/
     background-size: 70% 100%;
     background-repeat: no-repeat;
@@ -62,7 +74,7 @@ input[type=range]::-webkit-slider-runnable-track {
 
 .base {
     color: #094E5D;
-    font-size: 18px;
+    font-size: 16px;
     padding-left: 5px;
     padding-right: 5px;
 }
