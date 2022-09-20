@@ -11,13 +11,13 @@
     padding: 0.5em 2%;
 }
 
-@media only screen and (min-width: 1140px) {
+/*@media only screen and (min-width: 1140px) {*/
     /*Desktop*/
-    .row {
+    /*.row {
         max-width: 1140px;
-        margin: 0 auto; /*centers everything on the page*/
-    }
-}
+        margin: 0 auto;*/ /*centers everything on the page*/
+    /*}
+}*/
 
 @media only screen and (min-width: 769px) {
    
