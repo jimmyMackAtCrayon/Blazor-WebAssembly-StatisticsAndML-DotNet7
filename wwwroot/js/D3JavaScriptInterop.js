@@ -57,14 +57,14 @@ function createD3SvgObject(data, mean, title) {
     var svg = d3
         .select("#my_dataviz")
         .append("svg")
-            .attr("width", width + margin.left + margin.right)
+        .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
-        
-       /* .style('background-color', 'transparent')*/
-      /*  .style('width', '500px')*/
+
+        /* .style('background-color', 'transparent')*/
+        /*  .style('width', '500px')*/
         .append("g")
-            .attr('class', 'bars')
-            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+        .attr('class', 'bars')
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     // Y-AXIS
     // Add 10% to Y-axis
@@ -178,8 +178,8 @@ function createD3SvgObject(data, mean, title) {
     // Add X axis label:
     svg.append("text")
         .attr("text-anchor", "middle")
-        .attr("x", width/2)
-        .attr("y", height + margin.bottom/1.25)
+        .attr("x", width / 2)
+        .attr("y", height + margin.bottom / 1.25)
         .text("Count of observations")
         .style("font-size", "12px")
         .style("font-weight", "bold");
@@ -188,7 +188,7 @@ function createD3SvgObject(data, mean, title) {
     svg.append("text")
         .attr("text-anchor", "middle")
         .attr("y", 45)
-        .attr("x", (height/2))
+        .attr("x", (height / 2))
         .attr("transform", "rotate(90)")
         .text("Probability")
         .style("font-size", "12px")

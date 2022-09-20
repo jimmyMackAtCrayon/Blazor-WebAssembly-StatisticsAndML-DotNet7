@@ -7,7 +7,7 @@
 <div id="contentWrapper">
 
     <div class="row">
-        <div class="column-6" style="display:block; border-radius:1.5em; background-color:#E6E4D9;height:460px; width:460px;margin-top:25px; ">
+        <div class="column-6" style="display:block; border-radius:1.5em; background-color:#E6E4D9;height:460px; width:460px;margin-top:27px;margin-left:1%; ">
             <p style="margin-top:10%;">
                 <dl>
                     <div><dt class="base">Distribution Mean:</dt><dd class="base">@mean</dd></div>
@@ -16,7 +16,7 @@
                     <div>
                         <dt class="base">Probability:</dt>
                         <dd style="padding-left:6px">
-                            <input id="probabilityInput" type="range" min="5" max="100" step="5" style="width:90px;"
+                            <input id="probabilityInput" type="range" min="5" max="100" step="5" style="width:100px;"
                                    value="@this.Probability" @onchange="@OnProbabilityUpdated" oninput="probabilityOutput.value=probabilityInput.value/100" />
                             <output name="probabilityOutput" style="color:#094E5D;padding-left:6px;  font-size:18px;" id="probabilityOutput" for="probabilityInput">@(this.Probability / 100)</output>
                         </dd>
@@ -24,16 +24,16 @@
                     <div>
                         <dt class="base">Samples Size:</dt>
                         <dd style="padding-left:6px">
-                            <input id="samplesSizeInput" type="range" class="" min="250" max="20000" step="250" style="width:90px;"
+                            <input id="samplesSizeInput" type="range" class="" min="250" max="20000" step="250" style="width:100px;"
                                    value="@this.SamplesSize" @onchange="@OnSamplesSizeUpdated" oninput="samplesSizeOutput.value=samplesSizeInput.value" />
-                            <output name="samplesSizeOutput" class="base" style="padding-left:6px;width:auto;" id="samplesSizeOutput" for="samplesSizeInput">@this.SamplesSize</output>
+                            <output name="samplesSizeOutput" class="base" style="padding-left:6px;width:55px;" id="samplesSizeOutput" for="samplesSizeInput">@this.SamplesSize</output>
                         </dd>
                     </div>
                 </dl>
             </p>
         </div>
         <!--end of column -->
-        <div class="column-6" style="text-align:center;padding-top:25px;margin-left:-.5em;">
+        <div class="column-6" style="text-align:center;padding-top:25px;margin-right:2%">
             <p id="my_dataviz" style="border-radius:1.5em;display:block;background-color:#E6E4D9; height:460px; width:460px;">
 
             </p>
