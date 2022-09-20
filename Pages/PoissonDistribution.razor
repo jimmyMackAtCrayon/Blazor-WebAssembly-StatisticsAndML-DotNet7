@@ -17,15 +17,15 @@
                     <dd class="base">@TimeToGenerateData</dd>
                     <dt class="base">Lambda:</dt>
                     <dd style="padding-left:6px">
-                        <input id="lambdaInput" type="range" min="1" max="10" step="1" style="width:100px;"
+                        <input id="lambdaInput" type="range" min="1" max="10" step="1" style="width:90px;"
                                value="@this.Lambda" @onchange="@OnLambdaUpdated" oninput="lambdaOutput.value=lambdaInput.value" />
                         <output name="lambdaOutput" class="base" style="padding-left:6px;" id="lambdaOutput" for="lambdaInput">@this.Lambda</output>
                     </dd>
                     <dt class="base">Samples Size:</dt>
                     <dd style="padding-left:6px">
-                        <input id="samplesSizeInput" type="range" min="250" max="20000" step="250" style="width:100px;"
+                        <input id="samplesSizeInput" type="range" min="250" max="20000" step="250" style="width:90px;"
                                value="@this.SamplesSize" @onchange="@OnSamplesSizeUpdated" oninput="samplesSizeOutput.value=samplesSizeInput.value" />
-                        <output name="samplesSizeOutput" class="base" id="samplesSizeOutput" for="samplesSizeInput">@this.SamplesSize</output>
+                        <output name="samplesSizeOutput" class="base" style="width:auto;" id="samplesSizeOutput" for="samplesSizeInput">@this.SamplesSize</output>
                     </dd>
 
                 </dl>
