@@ -28,16 +28,26 @@
     background-color: transparent;
     width: 0;
 }
+
 .bumpLeft {
     padding-left: 10px;
     font-size: 16px;
+    color:#094E5D ;
 }
 
 .range {
     width: auto;
     text-align: left;
-    min-width:200px;
+    min-width: 200px;
     max-width: 200px;
+}
+
+.middle {
+    margin-right: 2%;
+    margin-bottom: 4%;
+    margin-top: 3%;
+    padding-top: 5%;
+    padding-left: 5%;
 }
 
 @media all and (max-width:878px) {
@@ -46,16 +56,27 @@
         order: 2;
         width: auto;
     }
-    
+
+    .flexer {
+        margin-left: -10px;
+        padding-top:3%;
+        padding-left:40px;
+    }
+    .middle{
+        padding-top:10%;
+    }
+    .range {
+        min-width: 50px;
+        max-width: 50px;
+    }
 }
+
 @media all and (min-width:879px) {
     .contentSection {
         flex: 3;
         order: 2;
         width: auto;
-        
     }
-
 }
 
 
