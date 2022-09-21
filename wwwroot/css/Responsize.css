@@ -15,10 +15,11 @@
 
 .contentSection{
     text-align:left;
-    background-color:#E6E4D9;
+    background-color:#E6E4D9;    
     height:500px;
     font-size: 22px;
 }
+
 
 
 @media all and (min-width:800px){
