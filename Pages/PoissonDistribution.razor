@@ -17,7 +17,7 @@
           
             <dt>Lambda:</dt>
             <dd style="padding-left:6px">
-                <input id="lambdaInput" type="range" min="1" max="10" step="1" style="width:100px;"
+                <input id="lambdaInput" class="range" type="range" min="1" max="10" step="1" style="width:100px;"
                        value="@this.Lambda" @onchange="@OnLambdaUpdated" oninput="lambdaOutput.value=lambdaInput.value" />
                 <output name="lambdaOutput" class="base" style="color:#094E5D; padding-left:6px; font-size:16px;" id="lambdaOutput" for="lambdaInput">@this.Lambda</output>
             </dd>

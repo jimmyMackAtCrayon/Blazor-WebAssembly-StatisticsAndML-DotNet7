@@ -15,7 +15,7 @@
             <dd class="bumpLeft">@TimeToGenerateData</dd>
             <dt>Lambda:</dt>
             <dd style="padding-left:6px">
-                <input id="lambdaInput" type="range" min="1" max="10" step="1" style="width:100px;"
+                <input id="lambdaInput" class="range" type="range" min="1" max="10" step="1"
                        value="@this.Lambda" @onchange="@OnLambdaUpdated" oninput="lambdaOutput.value=lambdaInput.value" />
                 <output name="lambdaOutput" class="base" style="color:#094E5D; padding-left:6px; font-size:16px;" id="lambdaOutput" for="lambdaInput">@this.Lambda</output>
             </dd>
@@ -32,7 +32,7 @@
 
             <dt>Nu:</dt>
             <dd style="padding-left:6px">
-                <input id="nuInput" type="range" min="4" max="40" step="2" 
+                <input class="range" id="nuInput" type="range" min="4" max="40" step="2"
                        value="@this.Nu" @onchange="@OnNuUpdated" oninput="nuOutput.value=nuInput.value/10" />
                 <output name="nuOutput" style="color:#094E5D;padding-left:6px;font-size:16px;" id="nuOutput" for="nuInput">@(this.Nu / 10)</output>
             </dd>
