@@ -2,56 +2,54 @@
 
 @inject IJSRuntime JSRuntime
 <div class="contentWrapper">
-   
-    <article class="contentSection" style="padding-left:4%;padding-top:5%">
-        
-        <p >
-            <dl>
-                <dt>Distribution Mean:</dt>
-                <dd class="bumpLeft">@this.Mean</dd>
-                <dt>Distribution Variance:</dt>
-                <dd class="bumpLeft">@variance</dd>
-                <dt>Time to generate data (ms):</dt>
-                <dd class="bumpLeft">@TimeToGenerateData</dd>
 
-                <dt>Probability:</dt>
+    <article class="contentSection" style="margin-right:2%;margin-bottom:4%;margin-top:3%;padding-top:5%;padding-left:5%;" >
 
-                <dd style="padding-left:6px">
-                    <input id="probabilityInput" type="range" min="5" max="100" step="5" style="width:90px;"
-                           value="@this.Probability" @onchange="@OnProbabilityUpdated" oninput="probabilityOutput.value=probabilityInput.value/100" />
-                    <output name="probabilityOutput" style="color:#094E5D; padding-left:6px; font-size:16px;" id="probabilityOutput" for="probabilityInput">@(this.Probability / 100)</output>
-                </dd>
+        <dl>
+            <dt>Distribution Mean:</dt>
+            <dd class="bumpLeft">@this.Mean</dd>
+            <dt>Distribution Variance:</dt>
+            <dd class="bumpLeft">@variance</dd>
+            <dt>Time to generate data (ms):</dt>
+            <dd class="bumpLeft">@TimeToGenerateData</dd>
+           
+            <dt>Probability:</dt>
 
+            <dd style="padding-left:6px">
+                <input class="range" id="probabilityInput" type="range" min="5" max="100" step="5" 
+                       value="@this.Probability" @onchange="@OnProbabilityUpdated" oninput="probabilityOutput.value=probabilityInput.value/100" />
+                <output name="probabilityOutput" style="color:#094E5D; padding-left:6px; font-size:14px;" id="probabilityOutput" for="probabilityInput">@(this.Probability / 100)</output>
+            </dd>
 
 
-                <dt>Samples Size:</dt>
-                <dd style="padding-left:6px">
-                    <input id="samplesSizeInput" type="range" min="250" max="20000" step="250" style="width:90px;"
-                           value="@this.SamplesSize" @onchange="@OnSamplesSizeUpdated" oninput="samplesSizeOutput.value=samplesSizeInput.value" />
-                    <output name="samplesSizeOutput" style="padding-left:6px;width:55px;" id="samplesSizeOutput" for="samplesSizeInput">@this.SamplesSize</output>
-                </dd>
+
+            <dt>Samples Size:</dt>
+            <dd style="padding-left:6px">
+                <input class="range" id="samplesSizeInput" type="range" min="250" max="20000" step="250"
+                       value="@this.SamplesSize" @onchange="@OnSamplesSizeUpdated" oninput="samplesSizeOutput.value=samplesSizeInput.value" />
+                <output name="samplesSizeOutput" style="color:#094E5D;padding-left:6px;width:55px;font-size:14px;" id="samplesSizeOutput" for="samplesSizeInput">@this.SamplesSize</output>
+            </dd>
 
 
-                <dt>Trials:</dt>
-                <dd style="padding-left:6px">
-                    <input id="trialsInput" type="range" min="10" max="500" step="10" style="width:90px;"
-                           value="@this.Trials" @onchange="@OnTrialsUpdated" oninput="trialsOutput.value=trialsInput.value" />
-                    <output name="trialsOutput" style="padding-left:6px;" id="trialsOutput" for="probabilityInput">@this.Trials</output>
-                </dd>
+            <dt>Trials:</dt>
+            <dd style="padding-left:6px">
+                <input class="range" id="trialsInput" type="range" min="10" max="500" step="10" style="width:60px;"
+                       value="@this.Trials" @onchange="@OnTrialsUpdated" oninput="trialsOutput.value=trialsInput.value" />
+                <output name="trialsOutput" style="color:#094E5D;padding-left:6px;font-size:14px;" id="trialsOutput" for="probabilityInput">@this.Trials</output>
+            </dd>
 
 
-            </dl>
-        </p>
+        </dl>
+
     </article>
-    <article class="contentSection">
-        <p id="my_dataviz"></p>
-    </article>    
-     <article class="contentSection" style="background-color:transparent;">
-        <p>&nbsp;</p>
+    <article class="contentSection contentSection1" id="my_dataviz"  >
     </article>
-    
+    <article class="contentSection" style="background-color:transparent;">
+        &nbsp;
+    </article>
   
-   
+
+
 
 </div>
 
