@@ -1,4 +1,50 @@
-﻿#contentWrapper {
+﻿.contentWrapper {
+    display: flex;
+    flex-flow: row wrap;
+    text-align: center;
+}
+
+    .contentWrapper > * {
+        padding: 10px;
+        margin: 10px;
+        flex: 1 100%;
+        border-radius: 10px;
+    }
+
+
+
+.contentSection{
+    text-align:left;
+    background-color:#E6E4D9;
+    height:500px;
+    font-size: 22px;
+}
+
+
+@media all and (min-width:800px){
+    .contentSection {
+        flex: 2;
+    }
+
+    .contentSection {
+        order: 1;
+    }
+  
+   
+}
+
+@media all and (min-width:600px){
+    
+   
+}
+
+
+
+
+
+
+
+/*#contentWrapper {
     background-color: #F1F2ED;
     margin-top: 3%;
 }
@@ -11,28 +57,28 @@
     padding: 0.5em 2%;
 }
 
-@media only screen and (min-width: 1140px) {
+@media only screen and (min-width: 1140px) {*/
     /*Desktop*/
-    .row {
+    /*.row {
         max-width: 1140px;
-        margin: 0 auto; /*centers everything on the page*/
-    }
+        margin: 0 auto;*/ /*centers everything on the page*/
+    /*}
 }
 
-@media only screen and (min-width: 641px) {
+@media only screen and (min-width: 641px) {*/
 
     /* Content */
-    .column-6 {
+    /*.column-6 {
         width: 50%;
         float: left;
     }
-}
+}*/
 /*end of the media query */
 
 
-@media (max-width: 768.98px) {
+/*@media (max-width: 768.98px) {*/
     /*Phone*/
-    .column-6 {
+    /*.column-6 {
         padding: 0.5em 2%;
     }
 }
@@ -43,13 +89,13 @@ input[type="range"] {
     -webkit-appearance: none;
     margin-right: 15px;
     width: 200px;
-    height: 12px;
+    height: 12px;*/
     /* background: rgba(255, 255, 255, 0.6);*/
-    border-radius: 5px;
+    /*border-radius: 5px;
     border: 3px solid #FF6A4C;
-    border-width: thin;
+    border-width: thin;*/
     /*background-image: linear-gradient(#FF6A4C, #FF6A4C);*/
-    background-size: 70% 100%;
+    /*background-size: 70% 100%;
     background-repeat: no-repeat;
 }
 
@@ -76,4 +122,4 @@ input[type=range]::-webkit-slider-runnable-track {
     font-size: 16px;
     padding-left: 5px;
     padding-right: 5px;
-}
+}*/
